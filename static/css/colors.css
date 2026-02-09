@@ -1,0 +1,17 @@
+/* One Dark Pro accent colors - referenced by @theme static in app.css */
+@theme static {
+	--color-rosewater: #e06c75;
+	--color-flamingo: #e06c75;
+	--color-pink: #c678dd;
+	--color-mauve: #c678dd;
+	--color-red: #e06c75;
+	--color-maroon: #be5046;
+	--color-peach: #d19a66;
+	--color-yellow: #e5c07b;
+	--color-green: #98c379;
+	--color-teal: #56b6c2;
+	--color-sky: #56b6c2;
+	--color-sapphire: #61afef;
+	--color-blue: #61afef;
+	--color-lavender: #c678dd;
+}
