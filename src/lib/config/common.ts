@@ -23,7 +23,7 @@ interface Site {
 
 const Site: Site = {
 	name: 'Kenny Nguyen',
-	url: dev ? 'http://localhost:5173' : 'https://kennynguyen.dev',
+	url: dev ? 'http://localhost:5173' : 'https://kennynguyen.me',
 	description:
 		'Kenny Nguyen - CS student at Arizona State University. Building software that solves real problems.',
 	tags: [
