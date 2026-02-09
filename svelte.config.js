@@ -1,5 +1,5 @@
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import adapter from '@sveltejs/adapter-cloudflare';
+import adapter from '@sveltejs/adapter-static';
 import { escapeSvelte, mdsvex } from 'mdsvex';
 import remarkToc from 'remark-toc';
 import rehypeSlug from 'rehype-slug';
@@ -157,7 +157,11 @@ const mdsvexOptions = {
 const config = {
 	preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)],
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({
+			pages: 'build',
+			assets: 'build',
+			fallback: '404.html'
+		}),
 		alias: {
 			$components: 'src/components',
 			$utils: 'src/lib/utils',
