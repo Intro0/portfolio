@@ -31,10 +31,9 @@ const Site: Site = {
 		'Computer Science',
 		'Arizona State University',
 		'Software Engineer',
-		'Full Stack Developer',
+		'Backend Engineer',
 		'Go Developer',
-		'TypeScript Developer',
-		'Web Development'
+		'Systems Programming'
 	],
 	seo: {
 		author: 'Kenny Nguyen',

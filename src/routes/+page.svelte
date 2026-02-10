@@ -162,32 +162,33 @@
 				<li class="flex gap-2">
 					<span class="text-accent mt-1.5 shrink-0">·</span>
 					<span
-						>Collaborated in a 3-person team to architect and develop a full-stack alumni platform
-						for a global community of over 1,000 users, leading the Next.js frontend and Supabase
-						(PostgreSQL) backend.</span
+						>Led a 3-person team to design and ship a full-stack alumni platform serving 1,000+
+						users across a global community, making key architectural decisions including technology
+						selection (Next.js, Supabase, Clerk) and system design.</span
 					>
 				</li>
 				<li class="flex gap-2">
 					<span class="text-accent mt-1.5 shrink-0">·</span>
 					<span
-						>Translated complex UI/UX designs into a dynamic world map using Mapbox GL JS,
-						implementing robust state management for stable rendering of 1,000+ alumni data points
-						during real-time filtering.</span
+						>Designed the platform's data model and access control architecture, choosing Row Level
+						Security (RLS) to enforce admin and user role separation and Clerk for authentication
+						with webhook-based account linking.</span
 					>
 				</li>
 				<li class="flex gap-2">
 					<span class="text-accent mt-1.5 shrink-0">·</span>
 					<span
-						>Engineered an end-to-end security model by integrating Clerk for authentication and
-						implementing Row Level Security (RLS) policies in Supabase for strict data access rules.</span
+						>Delivered an interactive alumni world map displaying 400+ members with real-time
+						filtering, a CSV-based bulk import tool that migrated 1,000+ legacy records, and an
+						admin dashboard for managing the alumni database.</span
 					>
 				</li>
 				<li class="flex gap-2">
 					<span class="text-accent mt-1.5 shrink-0">·</span>
 					<span
-						>Built a comprehensive admin dashboard enabling migration of 1,000+ legacy records
-						through a CSV import tool with custom data validation, and integrated Mailgun for
-						targeted bulk-email campaigns.</span
+						>Coordinated integration of third-party services including Mapbox for geocoding,
+						Supabase for the PostgreSQL backend, and Mailgun for targeted bulk-email campaigns to
+						the user base.</span
 					>
 				</li>
 			</ul>
@@ -212,20 +213,20 @@
 			<IconCode size={24} class="text-accent" />
 			Skills
 		</h2>
-		{#each [{ category: 'Languages', items: [{ name: 'Go', icon: 'go/go-original' }, { name: 'Python', icon: 'python/python-original' }, { name: 'Java', icon: 'java/java-original' }, { name: 'C++', icon: 'cplusplus/cplusplus-original' }, { name: 'C', icon: 'c/c-original' }, { name: 'TypeScript', icon: 'typescript/typescript-original' }, { name: 'JavaScript', icon: 'javascript/javascript-original' }, { name: 'SQL', icon: 'azuresqldatabase/azuresqldatabase-original' }, { name: 'Kotlin', icon: 'kotlin/kotlin-original' }, { name: 'HTML', icon: 'html5/html5-original' }, { name: 'CSS', icon: 'css3/css3-original' }] }, { category: 'Frameworks & Libraries', items: [{ name: 'Next.js', icon: 'nextjs/nextjs-original' }, { name: 'React', icon: 'react/react-original' }, { name: 'Node.js', icon: 'nodejs/nodejs-original' }, { name: 'Tailwind', icon: 'tailwindcss/tailwindcss-original' }] }, { category: 'Databases & Services', items: [{ name: 'PostgreSQL', icon: 'postgresql/postgresql-original' }, { name: 'Supabase', icon: 'supabase/supabase-original' }] }, { category: 'Developer Tools', items: [{ name: 'Git', icon: 'git/git-original' }, { name: 'Linux', icon: 'linux/linux-original' }, { name: 'Vercel', icon: 'vercel/vercel-original' }] }] as group (group.category)}
-			<div class="border-surface0 bg-surface0/20 rounded-xl border px-4 py-3">
+		{#each [{ category: 'Languages', items: [{ name: 'Go', icon: 'go/go-original' }, { name: 'Python', icon: 'python/python-original' }, { name: 'Java', icon: 'java/java-original' }, { name: 'C/C++', icon: 'cplusplus/cplusplus-original' }, { name: 'JavaScript', icon: 'javascript/javascript-original' }, { name: 'SQL', icon: 'azuresqldatabase/azuresqldatabase-original' }] }, { category: 'Frameworks & Tools', items: [{ name: 'React', icon: 'react/react-original' }, { name: 'Git', icon: 'git/git-original' }, { name: 'Linux', icon: 'linux/linux-original' }] }] as group (group.category)}
+			<div class="border-surface0 bg-surface0/20 rounded-xl border px-6 py-5">
 				<h3 class="text-accent mb-2 text-xs font-semibold tracking-wider uppercase">
 					{group.category}
 				</h3>
-				<div class="flex flex-wrap gap-x-4 gap-y-2">
+				<div class="flex flex-wrap gap-x-6 gap-y-3">
 					{#each group.items as skill (skill.name)}
-						<div class="flex items-center gap-1.5 py-1">
+						<div class="flex items-center gap-2.5 py-2">
 							<img
 								src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/{skill.icon}.svg"
 								alt={skill.name}
-								class="h-5 w-5"
+								class="h-8 w-8"
 							/>
-							<span class="text-subtext0 text-xs">{skill.name}</span>
+							<span class="text-subtext0 text-sm font-medium">{skill.name}</span>
 						</div>
 					{/each}
 				</div>
@@ -240,7 +241,7 @@
 			Projects
 		</h2>
 		<div class="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-stretch">
-			{#each [{ name: 'Redis Clone', repo: 'Intro0/redis-from-scratch-go', description: 'A Redis server built from scratch in Go implementing the RESP protocol, key-value storage with TTL expiration, concurrent client handling, and Redis Streams.', tags: ['go', 'tcp-sockets', 'concurrency', 'resp-protocol'] }, { name: 'Shell Clone', repo: 'Intro0/shell-from-scratch-go', description: 'A POSIX-like shell built from scratch in Go with a REPL, builtin commands, PATH resolution, and external program execution.', tags: ['go', 'systems-programming', 'process-management'] }] as project (project.repo)}
+			{#each [{ name: 'Redis Clone', repo: 'Intro0/redis-from-scratch-go', description: 'A Redis server built from scratch in Go supporting 9 commands including key-value storage with TTL expiration, Redis Streams with blocking reads, range queries, and auto-generated entry IDs, parsed over the RESP protocol on raw TCP.', tags: ['go', 'tcp-sockets', 'concurrency', 'resp-protocol'] }, { name: 'Shell Clone', repo: 'Intro0/shell-from-scratch-go', description: 'A POSIX-like shell in Go with a REPL loop, 3 builtin commands, and PATH resolution that searches system directories and validates executable permissions before spawning child processes with full I/O passthrough.', tags: ['go', 'systems-programming', 'process-management'] }] as project (project.repo)}
 				<a
 					href="https://github.com/{project.repo}"
 					target="_blank"
@@ -321,6 +322,49 @@
 					<div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
 						<IconTag size={16} class="text-subtext0" />
 						{#each ['python', 'udp-sockets', 'multi-threading', 'distributed-systems', 'fault-tolerance'] as tag}
+							<span
+								class="bg-surface0 rounded px-2 py-1 font-semibold"
+								style="color: var(--color-{getRandomAccentColor()})"
+							>
+								{tag}
+							</span>
+						{/each}
+					</div>
+				</div>
+			</div>
+			<!-- Compiler (no repo link) -->
+			<div
+				class="border-surface0 bg-base group flex flex-col overflow-hidden rounded-xl border shadow-lg"
+			>
+				<div
+					class="flex-1 overflow-hidden rounded-t-xl p-6"
+					style="background: rgba(160, 170, 185, 0.25)"
+				>
+					<div
+						class="bg-surface0 border-surface1 flex h-full flex-col rounded-xl border p-5 shadow-xl"
+					>
+						<div class="flex items-center gap-1.5">
+							<span class="bg-red h-3 w-3 rounded-full"></span>
+							<span class="bg-yellow h-3 w-3 rounded-full"></span>
+							<span class="bg-green h-3 w-3 rounded-full"></span>
+						</div>
+						<p class="text-accent mt-4 text-sm font-medium">Programming Languages Class Project</p>
+						<p class="text-subtext0 mt-2 text-sm leading-relaxed">
+							A compiler in C++ with a recursive descent parser that directly generates a
+							linked-list intermediate representation supporting 6 instruction types for
+							assignments, conditionals, loops, and switch statements.
+						</p>
+					</div>
+				</div>
+				<div class="space-y-3 px-5 pt-2 pb-5">
+					<h3 class="text-text text-xl font-semibold">Compiler</h3>
+					<p class="text-subtext0 line-clamp-2 text-sm">
+						Compiler with recursive descent parsing, intermediate code generation, symbol table
+						management, and a PC-based execution engine.
+					</p>
+					<div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
+						<IconTag size={16} class="text-subtext0" />
+						{#each ['c++', 'recursive-descent-parsing', 'code-generation', 'compilers'] as tag}
 							<span
 								class="bg-surface0 rounded px-2 py-1 font-semibold"
 								style="color: var(--color-{getRandomAccentColor()})"
