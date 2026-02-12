@@ -5,7 +5,7 @@
 	const year = new Date().getFullYear();
 </script>
 
-<footer class="border-surface1/40 bg-surface0/30 mx-5 mb-5 rounded-lg border p-5 text-sm">
+<footer class="border-accent/20 bg-accent/5 mx-5 mb-5 rounded-lg border p-5 text-sm">
 	<div class="flex flex-col items-center justify-between gap-y-4 md:flex-row md:gap-y-0">
 		<span class="text-subtext0 whitespace-nowrap">
 			© {year} <span class="text-accent font-medium">{Site.name}</span>

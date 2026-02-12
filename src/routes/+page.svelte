@@ -14,8 +14,33 @@
 		IconStar,
 		IconTag
 	} from '@tabler/icons-svelte';
-	import { getRandomAccentColor } from '$lib/stores/theme';
+	import { getTagColors } from '$lib/stores/theme';
 	import Site from '$lib/config/common';
+
+	const courses = [
+		'Foundations of Algorithms',
+		'Mobile Computing',
+		'Foundations of Machine Learning',
+		'Software QA & Testing',
+		'Computer Networks',
+		'Software Engineering',
+		'Programming Languages',
+		'Operating Systems',
+		'Data Structures & Algorithms'
+	];
+	const courseColors = getTagColors(courses);
+
+	const dsTags = [
+		'python',
+		'udp-sockets',
+		'multi-threading',
+		'distributed-systems',
+		'fault-tolerance'
+	];
+	const dsColors = getTagColors(dsTags);
+
+	const compTags = ['c++', 'recursive-descent-parsing', 'code-generation', 'compilers'];
+	const compColors = getTagColors(compTags);
 </script>
 
 <div class="mx-auto max-w-6xl space-y-20 px-0 py-8 md:space-y-24 md:px-4 md:py-12">
@@ -73,7 +98,7 @@
 			<IconSchool size={24} class="text-accent" />
 			Education
 		</h2>
-		<div class="border-surface0 bg-surface0/20 space-y-4 rounded-xl border p-6">
+		<div class="border-accent/20 bg-accent/5 space-y-4 rounded-xl border p-6">
 			<div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
 				<div>
 					<h3 class="text-text text-lg font-semibold">Arizona State University</h3>
@@ -104,27 +129,30 @@
 					Relevant Coursework
 				</h4>
 				<div class="flex flex-wrap gap-2">
-					{#each ['Foundations of Algorithms', 'Mobile Computing', 'Foundations of Machine Learning', 'Software QA & Testing', 'Computer Networks', 'Software Engineering', 'Programming Languages', 'Operating Systems', 'Data Structures & Algorithms'] as course}
+					{#each courses as course, i}
 						<span
 							class="bg-surface0 rounded-md px-2.5 py-1 text-xs font-semibold"
-							style="color: var(--color-{getRandomAccentColor()})"
+							style="color: var(--color-{courseColors[i]})"
 						>
 							{course}
 						</span>
 					{/each}
 				</div>
 			</div>
-		</div>
-
-		<!-- Certification -->
-		<div class="border-accent/20 bg-accent/5 rounded-xl border p-6">
-			<div class="flex items-start gap-3">
-				<IconCertificate size={20} class="text-accent mt-0.5" />
-				<div>
-					<h3 class="text-accent font-semibold">
-						CodePath Intermediate Technical Interview Prep (Advanced)
-					</h3>
-					<p class="text-subtext1 text-sm">Summer 2025</p>
+			<div class="border-surface1 border-t pt-4">
+				<h4 class="text-accent mb-3 text-sm font-semibold tracking-wider uppercase">
+					<span class="inline-flex items-center gap-2">
+						<IconCertificate size={16} />
+						Certifications
+					</span>
+				</h4>
+				<div class="flex items-start justify-between">
+					<div>
+						<p class="text-text font-semibold">
+							CodePath Intermediate Technical Interview Prep (Advanced)
+						</p>
+					</div>
+					<p class="text-subtext1 shrink-0 text-sm">Summer 2025</p>
 				</div>
 			</div>
 		</div>
@@ -213,25 +241,27 @@
 			<IconCode size={24} class="text-accent" />
 			Skills
 		</h2>
-		{#each [{ category: 'Languages', items: [{ name: 'Go', icon: 'go/go-original' }, { name: 'Python', icon: 'python/python-original' }, { name: 'Java', icon: 'java/java-original' }, { name: 'C/C++', icon: 'cplusplus/cplusplus-original' }, { name: 'JavaScript', icon: 'javascript/javascript-original' }, { name: 'SQL', icon: 'azuresqldatabase/azuresqldatabase-original' }] }, { category: 'Frameworks & Tools', items: [{ name: 'React', icon: 'react/react-original' }, { name: 'Git', icon: 'git/git-original' }, { name: 'Linux', icon: 'linux/linux-original' }] }] as group (group.category)}
-			<div class="border-surface0 bg-surface0/20 rounded-xl border px-6 py-5">
-				<h3 class="text-accent mb-2 text-xs font-semibold tracking-wider uppercase">
-					{group.category}
-				</h3>
-				<div class="flex flex-wrap gap-x-6 gap-y-3">
-					{#each group.items as skill (skill.name)}
-						<div class="flex items-center gap-2.5 py-2">
-							<img
-								src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/{skill.icon}.svg"
-								alt={skill.name}
-								class="h-8 w-8"
-							/>
-							<span class="text-subtext0 text-sm font-medium">{skill.name}</span>
-						</div>
-					{/each}
+		<div class="border-accent/20 bg-accent/5 space-y-4 rounded-xl border p-6">
+			{#each [{ category: 'Languages', items: [{ name: 'Go', icon: 'go/go-original' }, { name: 'Python', icon: 'python/python-original' }, { name: 'Java', icon: 'java/java-original' }, { name: 'C/C++', icon: 'cplusplus/cplusplus-original' }, { name: 'JavaScript', icon: 'javascript/javascript-original' }, { name: 'TypeScript', icon: 'typescript/typescript-original' }, { name: 'HTML', icon: 'html5/html5-original' }, { name: 'CSS', icon: 'css3/css3-original' }, { name: 'SQL', icon: 'azuresqldatabase/azuresqldatabase-original' }] }, { category: 'Frameworks & Tools', items: [{ name: 'React', icon: 'react/react-original' }, { name: 'Next.js', icon: 'nextjs/nextjs-original' }, { name: 'Node.js', icon: 'nodejs/nodejs-original' }, { name: 'Tailwind CSS', icon: 'tailwindcss/tailwindcss-original' }, { name: 'Git', icon: 'git/git-original' }, { name: 'Linux', icon: 'linux/linux-original' }] }] as group, i (group.category)}
+				<div class={i > 0 ? 'border-surface1 border-t pt-4' : ''}>
+					<h3 class="text-accent mb-2 text-xs font-semibold tracking-wider uppercase">
+						{group.category}
+					</h3>
+					<div class="flex flex-wrap gap-x-6 gap-y-3">
+						{#each group.items as skill (skill.name)}
+							<div class="flex items-center gap-2.5 py-2">
+								<img
+									src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/{skill.icon}.svg"
+									alt={skill.name}
+									class="h-8 w-8"
+								/>
+								<span class="text-subtext0 text-sm font-medium">{skill.name}</span>
+							</div>
+						{/each}
+					</div>
 				</div>
-			</div>
-		{/each}
+			{/each}
+		</div>
 	</section>
 
 	<!-- Section: Projects -->
@@ -267,17 +297,18 @@
 					</div>
 
 					<!-- Project info -->
-					<div class="space-y-3 px-5 pt-2 pb-5">
+					<div class="space-y-3 px-5 pt-5 pb-5">
 						<h3 class="text-text group-hover:text-accent text-xl font-semibold transition-colors">
 							{project.name}
 						</h3>
 						<p class="text-subtext0 line-clamp-2 text-sm">{project.description}</p>
 						<div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
 							<IconTag size={16} class="text-subtext0" />
-							{#each project.tags as tag}
+							{#each project.tags as tag, i}
+								{@const colors = getTagColors(project.tags)}
 								<span
 									class="bg-surface0 rounded px-2 py-1 font-semibold"
-									style="color: var(--color-{getRandomAccentColor()})"
+									style="color: var(--color-{colors[i]})"
 								>
 									{tag}
 								</span>
@@ -313,7 +344,7 @@
 				</div>
 
 				<!-- Project info -->
-				<div class="space-y-3 px-5 pt-2 pb-5">
+				<div class="space-y-3 px-5 pt-5 pb-5">
 					<h3 class="text-text text-xl font-semibold">Distributed Storage System</h3>
 					<p class="text-subtext0 line-clamp-2 text-sm">
 						Fault-tolerant distributed storage with XOR-based parity reconstruction, parallel
@@ -321,10 +352,10 @@
 					</p>
 					<div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
 						<IconTag size={16} class="text-subtext0" />
-						{#each ['python', 'udp-sockets', 'multi-threading', 'distributed-systems', 'fault-tolerance'] as tag}
+						{#each dsTags as tag, i}
 							<span
 								class="bg-surface0 rounded px-2 py-1 font-semibold"
-								style="color: var(--color-{getRandomAccentColor()})"
+								style="color: var(--color-{dsColors[i]})"
 							>
 								{tag}
 							</span>
@@ -356,7 +387,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="space-y-3 px-5 pt-2 pb-5">
+				<div class="space-y-3 px-5 pt-5 pb-5">
 					<h3 class="text-text text-xl font-semibold">Compiler</h3>
 					<p class="text-subtext0 line-clamp-2 text-sm">
 						Compiler with recursive descent parsing, intermediate code generation, symbol table
@@ -364,10 +395,10 @@
 					</p>
 					<div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
 						<IconTag size={16} class="text-subtext0" />
-						{#each ['c++', 'recursive-descent-parsing', 'code-generation', 'compilers'] as tag}
+						{#each compTags as tag, i}
 							<span
 								class="bg-surface0 rounded px-2 py-1 font-semibold"
-								style="color: var(--color-{getRandomAccentColor()})"
+								style="color: var(--color-{compColors[i]})"
 							>
 								{tag}
 							</span>
