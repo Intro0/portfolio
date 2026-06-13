@@ -65,9 +65,9 @@
 				Hey! I'm <span class="text-accent">Kenny Nguyen</span>
 			</h1>
 			<p class="text-subtext0 max-w-prose text-lg leading-relaxed">
-				I'm a Computer Science student at Arizona State University. I'm most interested in backend
-				engineering and systems programming, and have been working professionally in C# and Go.
-				Always looking for new opportunities to learn and build.
+				I'm a recent Computer Science grad from Arizona State University. I'm interested in backend
+				engineering and like building things that actually work at scale. Always looking for new
+				opportunities to learn and build.
 			</p>
 			<div class="flex flex-wrap items-center gap-x-4 gap-y-2 pt-2">
 				{#each Home.socialLinks as link (link.href)}
