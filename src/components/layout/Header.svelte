@@ -2,6 +2,7 @@
 	import Breadcrumb from './Breadcrumb.svelte';
 	import { onMount, onDestroy } from 'svelte';
 	import { browser } from '$app/environment';
+	import { IconTerminal2 } from '@tabler/icons-svelte';
 
 	const sections = [
 		{ id: 'about', label: 'About' },
@@ -74,6 +75,14 @@
 					{section.label}
 				</button>
 			{/each}
+			<a
+				href="/terminal"
+				data-sveltekit-reload
+				class="text-subtext0 hover:text-accent transition-colors duration-200"
+				aria-label="Terminal"
+			>
+				<IconTerminal2 size={18} />
+			</a>
 		</nav>
 	</div>
 </div>

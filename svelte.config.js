@@ -162,6 +162,13 @@ const config = {
 			assets: 'build',
 			fallback: '404.html'
 		}),
+		prerender: {
+			handleHttpError({ path }) {
+				// /terminal is a static HTML file, not a SvelteKit route
+				if (path === '/terminal') return 'ignore';
+				throw new Error(`Unhandled prerender error for ${path}`);
+			}
+		},
 		alias: {
 			$components: 'src/components',
 			$utils: 'src/lib/utils',
