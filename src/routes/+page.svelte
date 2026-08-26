@@ -173,8 +173,15 @@
 			<div class="border-surface0 bg-surface0/20 rounded-xl border p-6">
 				<div class="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
 					<div>
-						<h3 class="text-text text-lg font-semibold">Software Engineering Intern (Contract)</h3>
-						<p class="text-accent text-sm font-medium">Tokyo Electron America</p>
+						<h3 class="text-text text-lg font-semibold">
+							Software Engineering Intern — Senior Capstone
+						</h3>
+						<div class="flex items-center gap-2">
+							<p class="text-accent text-sm font-medium">Tokyo Electron America</p>
+							<span class="bg-surface1 text-subtext0 rounded px-2 py-0.5 text-xs font-medium">
+								Contract
+							</span>
+						</div>
 					</div>
 					<div class="text-subtext1 text-sm md:text-right">
 						<p>Aug 2025 – May 2026</p>
@@ -184,25 +191,31 @@
 					<li class="flex gap-2">
 						<span class="text-accent mt-1.5 shrink-0">·</span>
 						<span
-							>Designed and implemented a C# state machine in Unity governing NPC behavior with
-							multiple states and transition conditions; wired event-driven communication between
-							subsystems to trigger cross-component behavior on state changes.</span
+							>Built a C# Unity state machine for NPC behavior and event-driven communication
+							between subsystems, enabling state changes to trigger coordinated behavior across the
+							application.</span
 						>
 					</li>
 					<li class="flex gap-2">
 						<span class="text-accent mt-1.5 shrink-0">·</span>
 						<span
-							>Led final integration of independently developed Unity modules into a single Meta
-							Quest VR application using the Meta XR SDK, establishing correct state initialization,
-							scene transitions, and end conditions for Android/Quest standalone deployment.</span
+							>Integrated independently developed Unity modules into a single Meta Quest VR
+							application, establishing reliable initialization, scene transitions, and end
+							conditions for standalone Android deployment.</span
 						>
 					</li>
 					<li class="flex gap-2">
 						<span class="text-accent mt-1.5 shrink-0">·</span>
 						<span
-							>Debugged cross-module integration failures in C#/Unity where components passed in
-							isolation but broke in combined runtime; resolved Quest 2 and Quest 3 device-specific
-							geometry collision failures and UI layout inconsistencies.</span
+							>Resolved integration failures that emerged only in combined runtime, including
+							geometry-collision and UI-layout issues across Quest 2 and Quest 3 hardware.</span
+						>
+					</li>
+					<li class="flex gap-2">
+						<span class="text-accent mt-1.5 shrink-0">·</span>
+						<span
+							>Produced integration and test handoff documentation for client engineers and
+							presented the completed application to academic and industry stakeholders.</span
 						>
 					</li>
 				</ul>
