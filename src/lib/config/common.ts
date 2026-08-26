@@ -25,7 +25,7 @@ const Site: Site = {
 	name: 'Kenny Nguyen',
 	url: dev ? 'http://localhost:5173' : 'https://kennynguyen.me',
 	description:
-		'Kenny Nguyen - CS student at Arizona State University. Building software that solves real problems.',
+		"Kenny Nguyen - Computer Science master's student at Arizona State University and backend-focused software engineer.",
 	tags: [
 		'Kenny Nguyen',
 		'Computer Science',

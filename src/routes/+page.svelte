@@ -65,9 +65,9 @@
 				Hey! I'm <span class="text-accent">Kenny Nguyen</span>
 			</h1>
 			<p class="text-subtext0 max-w-prose text-lg leading-relaxed">
-				I'm a recent Computer Science grad from Arizona State University. I'm interested in backend
-				engineering and like building things that actually work at scale. Always looking for new
-				opportunities to learn and build.
+				I'm a Computer Science master's student at Arizona State University with a B.S. in Computer
+				Science. I enjoy backend and systems engineering, especially building reliable software and
+				understanding how it works underneath.
 			</p>
 			<div class="flex flex-wrap items-center gap-x-4 gap-y-2 pt-2">
 				{#each Home.socialLinks as link (link.href)}
@@ -101,18 +101,31 @@
 			<IconSchool size={24} class="text-accent" />
 			Education
 		</h2>
-		<div class="border-accent/20 bg-accent/5 space-y-4 rounded-xl border p-6">
+		<div class="border-accent/20 bg-accent/5 space-y-5 rounded-xl border p-6">
 			<div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
 				<div>
 					<h3 class="text-text text-lg font-semibold">Arizona State University</h3>
-					<p class="text-subtext0">
-						<span class="text-accent font-medium">B.S. in Computer Science</span> — GPA:
-						<span class="text-green font-medium">3.88</span>
-					</p>
-					<p class="text-subtext1 text-sm">Aug 2022 – May 2026</p>
+					<p class="text-accent font-medium">M.S. in Computer Science</p>
+					<p class="text-subtext1 text-sm">Accelerated 4+1 Program</p>
 				</div>
-				<div class="text-subtext1 text-right text-sm">
+				<div class="text-subtext1 text-sm md:text-right">
+					<p>Aug 2026 – Dec 2027</p>
 					<p>Tempe, AZ</p>
+				</div>
+			</div>
+			<div class="border-surface1 border-t pt-5">
+				<div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+					<div>
+						<h3 class="text-text text-lg font-semibold">Arizona State University</h3>
+						<p class="text-subtext0">
+							<span class="text-accent font-medium">B.S. in Computer Science</span> — GPA:
+							<span class="text-green font-medium">3.88</span>
+						</p>
+						<p class="text-subtext1 text-sm">Aug 2022 – May 2026</p>
+					</div>
+					<div class="text-subtext1 text-sm md:text-right">
+						<p>Tempe, AZ</p>
+					</div>
 				</div>
 			</div>
 			<div class="border-surface1 border-t pt-4">
@@ -283,7 +296,7 @@
 			Projects
 		</h2>
 		<div class="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-stretch">
-			{#each [{ name: 'Redis Server', repo: 'Intro0/redis-from-scratch-go', description: 'A Redis-compatible server in Go supporting 9 commands including key-value storage with TTL expiration and Redis Streams with blocking reads, range queries, and auto-generated entry IDs by parsing the RESP protocol over raw TCP.', tags: ['go', 'tcp-sockets', 'concurrency', 'resp-protocol'] }, { name: 'Shell Clone', repo: 'Intro0/shell-from-scratch-go', description: 'A POSIX-like shell in Go with a REPL loop, 3 builtin commands, and PATH resolution that searches system directories and validates executable permissions before spawning child processes with full I/O passthrough.', tags: ['go', 'systems-programming', 'process-management'] }] as project (project.repo)}
+			{#each [{ name: 'Redis Server', repo: 'Intro0/redis-from-scratch-go', description: 'A Redis-inspired server in Go with 13 commands over TCP, a buffered RESP parser, strings with TTL expiration, Redis Streams, concurrent Pub/Sub, and AOF persistence for SET operations with command replay on startup.', tags: ['go', 'tcp-sockets', 'concurrency', 'pub-sub', 'aof-persistence'] }, { name: 'Shell Clone', repo: 'Intro0/shell-from-scratch-go', description: 'A POSIX-like shell in Go with a REPL loop, 3 builtin commands, and PATH resolution that searches system directories and validates executable permissions before spawning child processes with full I/O passthrough.', tags: ['go', 'systems-programming', 'process-management'] }] as project (project.repo)}
 				<a
 					href="https://github.com/{project.repo}"
 					target="_blank"
