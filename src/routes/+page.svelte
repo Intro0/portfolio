@@ -121,9 +121,9 @@
 							<span class="text-accent font-medium">B.S. in Computer Science</span> — GPA:
 							<span class="text-green font-medium">3.88</span>
 						</p>
-						<p class="text-subtext1 text-sm">Aug 2022 – May 2026</p>
 					</div>
 					<div class="text-subtext1 text-sm md:text-right">
+						<p>Aug 2022 – May 2026</p>
 						<p>Tempe, AZ</p>
 					</div>
 				</div>
@@ -326,7 +326,6 @@
 						<h3 class="text-text group-hover:text-accent text-xl font-semibold transition-colors">
 							{project.name}
 						</h3>
-						<p class="text-subtext0 line-clamp-2 text-sm">{project.description}</p>
 						<div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
 							<IconTag size={16} class="text-subtext0" />
 							{#each project.tags as tag, i}
@@ -370,10 +369,6 @@
 				</div>
 				<div class="space-y-3 px-5 pt-5 pb-5">
 					<h3 class="text-text text-xl font-semibold">Distributed Order Processing System</h3>
-					<p class="text-subtext0 line-clamp-2 text-sm">
-						Event-driven microservices with Kafka, Spring Boot, PostgreSQL, and Docker Compose for
-						reliable order processing across distributed services.
-					</p>
 					<div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
 						<IconTag size={16} class="text-subtext0" />
 						{#each orderTags as tag, i}
@@ -415,10 +410,6 @@
 				<!-- Project info -->
 				<div class="space-y-3 px-5 pt-5 pb-5">
 					<h3 class="text-text text-xl font-semibold">Distributed Storage System</h3>
-					<p class="text-subtext0 line-clamp-2 text-sm">
-						Fault-tolerant distributed storage with XOR-based parity reconstruction, parallel
-						striped I/O, and coordinated multi-process recovery across networked disks.
-					</p>
 					<div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
 						<IconTag size={16} class="text-subtext0" />
 						{#each dsTags as tag, i}
@@ -458,10 +449,6 @@
 				</div>
 				<div class="space-y-3 px-5 pt-5 pb-5">
 					<h3 class="text-text text-xl font-semibold">Compiler</h3>
-					<p class="text-subtext0 line-clamp-2 text-sm">
-						Compiler with recursive descent parsing, intermediate code generation, symbol table
-						management, and a PC-based execution engine.
-					</p>
 					<div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
 						<IconTag size={16} class="text-subtext0" />
 						{#each compTags as tag, i}
